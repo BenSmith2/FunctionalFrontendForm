@@ -1,69 +1,101 @@
-body { 
-    background-color: rgb(19, 19, 19);
-    margin: 0%; 
-    padding: 5%;
-    display: flex;
-    justify-content: center;
-    font-size: large;
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(20, 24, 32);
+    color: #c9e4f4;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.background-border{
-    color: rgb(49, 49, 49);
-    background-color: #565656;
-    height: 90vh;
-    width: 70vw;
-    border-radius: 1.2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.background{
-    color: rgb(49, 49, 49);
-    background-color: #d0d5d8;
-    height: 88vh;
-    width: 69vw;
-    border-radius: 1.2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#allForms{
-    /* background-color: rgb(203, 103, 103); */
-    border-style: dashed;
-    border-width: .1em;
-    height: 70vh;
-    width: 50vw;
+a{
+    color:#57acdc;
+}
+a:visited{
+    color:#57acdc;
+}
+a:hover{
+    color:#276bb0;
+}
+
+#disclaimer{
+    font-size: 12px;
+}
+
+.message {
+    max-width: 720px;
+}
+
+.content {
+    width: 100%;
+    height: 600px;
+    background-color: #cee8f6;
+    color: rgb(20, 24, 32);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5em;
-    overflow:auto;
+    overflow: auto;
 }
 
-form{
+#allForms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: large;
+    margin: 2%;
+}
+
+.aForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.aForm button{
+    align-self: flex-end;
+}
+.aForm span{
+    margin-right: 30px;
+}
+.aForm input{
+    margin-left: 10px;
+}
+.aForm button{
+    max-width: 60px;
+}
+
+.aForm form{
+    display: flex;
+
+}
+
+.aFormInputs{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: space-between;
+    gap: 7px;
+}
+
+.buttons {
     display: flex;
     align-items: center;
-    gap: 1.2em;
+    gap: 3%;
+    margin: 12px;
 }
 
-.buttons{
-    margin-top: 20px;
-    gap: 50px;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
+.footer{
+    position:static;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    font-size: 16px;
+    flex-direction: column;
+    align-items: center;
 }
 
-
-.red1{
+/* .red1{
     height: 25px;
     width: 25px;
     background-color: #e91e63;
@@ -125,4 +157,4 @@ form{
     background-color: #60c689;
     border-radius: 50%;
     display: inline-block;
-}
+} */

@@ -3,6 +3,25 @@ const oForms = document.forms;
 const REGEX = /^[A-Za-z]*\s{1}[A-Za-z]*$/
 const now = new Date();
 const nowDate = JSON.stringify(now)
+// const formHTML = `
+//     <div class="aForm">
+//         <span id="error${oForms.length}" style="color:#e91e63"></span>
+//         <form>
+//             <span>${oForms.length+1}.</span>
+//             <div class="aFormInputs">
+//                 <div class="aFormName">
+//                     <label for="name">Name:</label>
+//                     <input type="text" name="name">
+//                 </div>
+//                 <div class="aFormAddress">
+//                     <label for="address">Address:</label>
+//                     <input type="text" name="address">
+//                 </div>
+//             </div>
+//         </form>
+//         <button type="button" onclick="deleteForm(${oForms.length})">delete</button>
+//     </div>
+// `
 
 function collectData(){
     const people = []
@@ -18,7 +37,7 @@ function collectData(){
     return people
 }
 
-function previewFile() {
+function openFile() {
     const [file] = document.querySelector('input[type=file]').files;
     const reader = new FileReader();
     let data = [{}]
@@ -34,21 +53,40 @@ function previewFile() {
 }
 
 function populateForm(data){
-    console.log("From popf:", data.length)
-    for(let i=0; i<=data.length-1; i++){
-        allForms.innerHTML += `
-        <span id="error${oForms.length}" style="color:red"></span>
-        <form>
-        <span>${oForms.length+1}.</span>
-            <label for="name">Name:</label>
-            <input type="text" name="name">
-            <label for="address">Address:</label>
-            <input type="text" name="address">
-            <button type="button" onclick="deleteForm(${oForms.length})">delete</button>
-        </form>
-    `
+    if(oForms.length>0){
+        const people = collectData()
+        for(let i=0;i<people.length;i++){
+            let person = {
+                "name": people[i].name,
+                "address": people[i].address
+            }
+            data.push(person)
+        }
     }
-    for(let i = 0; i<oForms.length; i++){
+    console.log("From popf:", data.length)
+
+    for(let i=oForms.length; i<=data.length-1; i++){
+        allForms.innerHTML += `
+            <div class="aForm">
+                <span id="error${oForms.length}" style="color:#e91e63"></span>
+                <form>
+                    <span>${oForms.length+1}.</span>
+                    <div class="aFormInputs">
+                        <div class="aFormName">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" value="${data[i].name}">
+                        </div>
+                        <div class="aFormAddress">
+                            <label for="address">Address:</label>
+                            <input type="text" name="address" value="${data[i].address}">
+                        </div>
+                    </div>
+                </form>
+                <button type="button" onclick="deleteForm(${oForms.length})">delete</button>
+            </div>
+        `
+    }
+    for(let i = 0; i<oForms.length-1; i++){
         oForms[i].elements["name"].value = data[i].name;
         oForms[i].elements["address"].value = data[i].address;
     }
@@ -68,15 +106,23 @@ function addForm(){
     }
     console.log("People:", people)
     allForms.innerHTML += `
-        <span id="error${oForms.length}" style="color:red"></span>
-        <form>
-        <span>${oForms.length+1}.</span>
-            <label for="name">Name:</label>
-            <input type="text" name="name">
-            <label for="address">Address:</label>
-            <input type="text" name="address">
+        <div class="aForm">
+            <span id="error${oForms.length}" style="color:#e91e63"></span>
+            <form>
+                <span>${oForms.length+1}.</span>
+                <div class="aFormInputs">
+                    <div class="aFormName">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="aFormAddress">
+                        <label for="address">Address:</label>
+                        <input type="text" name="address">
+                    </div>
+                </div>
+            </form>
             <button type="button" onclick="deleteForm(${oForms.length})">delete</button>
-        </form>
+        </div>
     `
     for(let i = 0; i<oForms.length-1; i++){
         oForms[i].elements["name"].value = people[i].name;
@@ -97,16 +143,24 @@ function deleteForm(index){
     allForms.innerHTML = ``
     for(let i =0; i<arr.length; i++){
         allForms.innerHTML += `
-        <span id="error${oForms.length}" style="color:red"></span>
-        <form>
-        <span>${oForms.length+1}.</span>
-            <label for="name">Name:</label>
-            <input type="text" name="name" value="${arr[i].name}">
-            <label for="address">Address:</label>
-            <input type="text" name="address" value="${arr[i].address}">
-            <button type="button" onclick="deleteForm(${oForms.length})">delete</button>
-        </form>
-    `
+            <div class="aForm">
+                <span id="error${oForms.length}" style="color:#e91e63"></span>
+                <form>
+                    <span>${oForms.length+1}.</span>
+                    <div class="aFormInputs">
+                        <div class="aFormName">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" value="${arr[i].name}">
+                        </div>
+                        <div class="aFormAddress">
+                            <label for="address">Address:</label>
+                            <input type="text" name="address" value="${arr[i].address}">
+                        </div>
+                    </div>
+                </form>
+                <button type="button" onclick="deleteForm(${oForms.length})">delete</button>
+            </div>
+        `
     }
     console.log(arr)
     // location.reload()
