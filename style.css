@@ -1,0 +1,128 @@
+body { 
+    background-color: rgb(19, 19, 19);
+    margin: 0%; 
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.background-border{
+    color: rgb(49, 49, 49);
+    background-color: #565656;
+    height: 90vh;
+    width: 70vw;
+    border-radius: 1.2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.background{
+    color: rgb(49, 49, 49);
+    background-color: #d0d5d8;
+    height: 88vh;
+    width: 69vw;
+    border-radius: 1.2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#allForms{
+    /* background-color: rgb(203, 103, 103); */
+    border-style: dashed;
+    border-width: .1em;
+    height: 70vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    overflow:auto;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+}
+
+.buttons{
+    margin-top: 20px;
+    gap: 50px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+
+
+.red1{
+    height: 25px;
+    width: 25px;
+    background-color: #e91e63;
+    border-radius: 50%;
+    display: inline-block;
+}
+.red2{
+    height: 25px;
+    width: 25px;
+    background-color: #c21858;
+    border-radius: 50%;
+    display: inline-block;
+}
+.purple1{
+    height: 25px;
+    width: 25px;
+    background-color: #9c27b0;
+    border-radius: 50%;
+    display: inline-block;
+}
+.purple2{
+    height: 25px;
+    width: 25px;
+    background-color: #5727b0;
+    border-radius: 50%;
+    display: inline-block;
+}
+.blue1{
+    height: 25px;
+    width: 25px;
+    background-color: #272ab0;
+    border-radius: 50%;
+    display: inline-block;
+}
+.blue2{
+    height: 25px;
+    width: 25px;
+    background-color: #276bb0;
+    border-radius: 50%;
+    display: inline-block;
+}
+.blue3{
+    height: 25px;
+    width: 25px;
+    background-color: #57acdc;
+    border-radius: 50%;
+    display: inline-block;
+}
+.green1{
+    height: 25px;
+    width: 25px;
+    background-color: #57dcbe;
+    border-radius: 50%;
+    display: inline-block;
+}
+.green2{
+    height: 25px;
+    width: 25px;
+    background-color: #60c689;
+    border-radius: 50%;
+    display: inline-block;
+}
